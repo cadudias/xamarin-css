@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:FiapCoin.ViewModel"
+    xmlns:local="clr-namespace:FiapCoin.CustomRender"
+    xmlns:behavior="clr-namespace:FiapCoin.Behavior"
+    x:Class="FiapCoin.Views.LoginPage">
+
+    <ContentPage.BindingContext>
+        <vm:LoginViewModel></vm:LoginViewModel>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <Frame x:Name="frame" 
+               OutlineColor="Transparent"
+               HasShadow="False"
+               HorizontalOptions="Center" 
+               VerticalOptions="Center">
+            
+            <StackLayout Margin="40">
+                <Image Source="icon.png"></Image>
+
+                <local:ExtendedEntry Placeholder="Email" HorizontalOptions="FillAndExpand"
+                                     Text="{Binding Usuario.Email, Mode=TwoWay}"
+                                     HeightRequest="40">
+                    <local:ExtendedEntry.Behaviors>
+                        <behavior:EmailValidationBehavior />
+                    </local:ExtendedEntry.Behaviors>
+                </local:ExtendedEntry>
+
+                <local:ExtendedEntry Placeholder="Senha" HorizontalOptions="FillAndExpand"
+                                     IsPassword="True"
+                                     Text="{Binding Usuario.Senha, Mode=TwoWay}"
+                                     HeightRequest="40">
+                    <local:ExtendedEntry.Behaviors>
+                        <behavior:CampoObrigadorioBehavior />
+                    </local:ExtendedEntry.Behaviors>
+                </local:ExtendedEntry>
+                
+                <local:CustomButton x:Name="btnEntrar"  
+                                    Text="Entrar" 
+                                    Command="{Binding EntrarClickedCommand}"  
+                                    CustomBorderRadius="4"  
+                                    CustomBorderWidth="4"  
+                                    VerticalOptions="Center"/>
+
+                <Label Text=""></Label>
+
+
+                <local:CustomButton x:Name="btnScannear"  
+                                    Text="Scannear Acesso" 
+                                    Command="{Binding ScannerClickedCommand}"  
+                                    CustomBorderRadius="4"  
+                                    CustomBorderWidth="4"  
+                                    VerticalOptions="Center"/>
+                
+            </StackLayout>
+        </Frame>
+    </ContentPage.Content>
+</ContentPage>

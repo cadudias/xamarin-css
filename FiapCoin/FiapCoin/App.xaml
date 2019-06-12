@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FiapCoin.App">
+	<Application.Resources>
+
+        <!-- Application resource dictionary -->
+        <ResourceDictionary>
+
+            <StyleSheet Source="./Css/style.css" />
+            
+            <!--Colors-->
+            <Color x:Key="ColorText">#3030E8</Color>
+            <Color x:Key="ColorButton">#20E82A</Color>
+
+            <!--Font Families-->
+            <OnPlatform x:TypeArguments="x:String" x:Key="RegularFontFamily">
+                <On Platform="Android">sans-serif</On>
+                <On Platform="iOS">HelveticaNeue</On>
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="MediumFontFamily">
+                <On Platform="Android">sans-serif-medium</On>
+                <On Platform="iOS">HelveticaNeue-Medium</On>
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="IconFontFamily">
+                <On Platform="Android">fa-solid-900.ttf#Font Awesome 5 Free Regular</On>
+                <On Platform="iOS">Font Awesome 5 Free</On>
+            </OnPlatform>
+            
+            <!--Styles-->
+            <Style x:Key="TitleStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource ColorText}" />
+                <Setter Property="Font" Value="{StaticResource MediumFontFamily}" />
+            </Style>
+            
+            <Style x:Key="IconStyle" TargetType="Label">
+                <Setter Property="FontFamily" Value="{StaticResource IconFontFamily}" />
+            </Style>
+
+            <Style x:Key="ButtonStyle" TargetType="Button">
+                <Setter Property="TextColor" Value="{StaticResource ColorText}" />
+                <Setter Property="Font" Value="{StaticResource RegularFontFamily}" />
+                <Setter Property="BackgroundColor" Value="{StaticResource ColorButton}"/>
+            </Style>
+        </ResourceDictionary>
+        
+
+	</Application.Resources>
+</Application>

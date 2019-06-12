@@ -1,0 +1,23 @@
+﻿^contentpage {
+    background-color: #a96538;
+}
+
+#frame {
+    background-color: white;
+    border-radius: 10;
+    height: 300;
+    width: 300;
+    align-self: center;
+}
+
+.entrar {
+    border-color: #a96538;
+    background-color: #a96538;
+    color: #ffffff;
+}
+
+#btnScannear {
+    border-color: #a96538;
+    background-color: #FFFFFF;
+    color: #a96538;
+}
